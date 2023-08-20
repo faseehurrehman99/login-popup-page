@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" type="text/css" href="login.css" />
+</head>
+<body>
+<!-- HTML -->
+    <button class="btn-login" onclick="showmodel()">Login</button>
+    <div class="overlay" onclick="closemodel()"></div>
+   
+    <div class="login-form">
+        <span>&times;</span>
+        <form action="">
+            <label for="">Email:
+                <input type="email"><br>
+            </label>
+            <label for="">Password:
+                <input type="password"><br>
+            </label>
+            <button>Login</button>
+        </form>
+
+        
+    </div>
+    <!-- JavaScript -->
+    <script>
+        function showmodel(){
+            document.querySelector('.overlay').classList.add('showoverlay');
+            document.querySelector('.login-form').classList.add('showlogin-form');
+        }
+        function closemodel(){
+            document.querySelector('.overlay').classList.remove('showoverlay');
+            document.querySelector('.login-form').classList.remove('showlogin-form');
+        }
+        let close_model=document.querySelector('span');
+        close_model.addEventListener("click",closemodel)
+
+        let show_model=document.querySelector('login-form');
+        show_model.addEventListener('click',showmodel)
+    </script>
+</body>
+</html>
